@@ -51,8 +51,8 @@
             <form action="{{ route('login') }}" method="POST" class="margin-bottom-0">
                 @csrf
                 <div class="form-group m-b-20">
-                    <input id="username" name="username" value="{{ old('username') }}" type="text" class="form-control form-control-lg" placeholder="Usuario" required autofocus />
-                    @error('username')
+                    <input id="email" name="email" value="{{ old('email') }}" type="text" class="form-control form-control-lg" placeholder="Usuario" required autofocus />
+                    @error('email')
                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -24,7 +24,7 @@
 @section('content')
  <!-- begin breadcrumb -->
  <ol class="breadcrumb float-xl-right">
-        <li class="breadcrumb-item"><a href="{{ url('/home') }}">Principal</a></li>
+        <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Principal</a></li>
         <li class="breadcrumb-item"><a href="{{ route('roles.index') }}">Roles</a></li>
         <li class="breadcrumb-item active">Nuevo rol</li>
     </ol>
@@ -59,7 +59,7 @@
                             </label>
                             <div class="col-12">
                                 <div class="input-group ">
-                                    <input type="text" id="name" name="name" class="form-control" value="{{ $data['name'] }}" placeholder="Nombre del Rol">
+                                    <input type="text" id="name" name="name" class="form-control" value="" placeholder="Nombre del Rol">
                                     <div class="input-group-addon">
                                         <i class="fa fa-address-card"></i>
                                     </div>
@@ -79,7 +79,7 @@
                             </label>
                             <div class="col-12">
                                 <div class="input-group ">
-                                    <input type="text" id="slug" name="slug" class="form-control" value="{{ $data['slug'] }}" onkeypress="return numbersAndLettersOnly()" placeholder="Slug del Rol">
+                                    <input type="text" id="slug" name="slug" class="form-control" value="" onkeypress="return numbersAndLettersOnly()" placeholder="Slug del Rol">
                                     <div class="input-group-addon">
                                         <i class="fab fa-sellcast"></i>
                                     </div>
@@ -99,7 +99,7 @@
                             </label>
                             <div class="col-12">
                                 <div class="input-group ">
-                                    <textarea id="description" name="description" class="form-control" placeholder="Descripción del rol">{{ $data['description'] }}</textarea>
+                                    <textarea id="description" name="description" class="form-control" placeholder="Descripción del rol"></textarea>
                                     <div class="input-group-addon">
                                         <i class="fa fa-list-alt"></i>
                                     </div>
@@ -114,18 +114,20 @@
                             @endif
                         </div>
                     </div>
+                    {{--
                     @php
                         if(!$data['level']){
                             $data['level'] = 0;
                         }
                     @endphp
+                    --}}
                     <div class="col-12 col-md-4">
                         <div class="form-group has-feedback row {{ $errors->has('level') ? ' has-error ' : '' }}">
                             <label for="level" class="col-12 control-label">
                                 Nivel de Rol
                             </label>
                             <div class="col-12">
-                                <input type="number" id="level" name="level" min="0" step="1" onkeypress="return event.charCode >= 48" class="form-control" value="{{ $data['level'] }}" placeholder="Nivel de Tipo Rol ">
+                                <input type="number" id="level" name="level" min="0" step="1" onkeypress="return event.charCode >= 48" class="form-control" value="{{--{{ $data['level'] }}--}}" placeholder="Nivel de Tipo Rol ">
                             </div>
                             @if ($errors->has('level'))
                                 <div class="col-12">
@@ -142,11 +144,12 @@
                             <div class="col-12">
                                 <select name="permissions[]" id="permissions" class="multiple-select2 form-control" multiple="multiple">
                                     <option value="">Seleccionar Permiso</option>
-                                    @foreach ($data['allPermissions'] as $permission)
+                                    {{--@foreach ($data['allPermissions'] as $permission)
                                     <option @if (in_array($permission->id, $data['rolePermissionsIds'])) selected @endif value="{{ $permission }}">
                                         {{ $permission->name }}
                                     </option>
                                     @endforeach
+                                    --}}
                                 </select>
                             </div>
                             @if ($errors->has('permissions'))

@@ -14,7 +14,7 @@
 @section('content')
  <!-- begin breadcrumb -->
  <ol class="breadcrumb float-xl-right">
-    <li class="breadcrumb-item"><a href="{{ url('/home') }}">Principal</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Principal</a></li>
     <li class="breadcrumb-item active">Roles</li>
 </ol>
 <!-- end breadcrumb -->
@@ -116,6 +116,7 @@
 <script src="/assets/plugins/moment/locale/es-us.js"></script>
 <script src="/assets/plugins/switchery/switchery.min.js"></script>
 <!-- ================== END PAGE LEVEL JS ================== -->
+
 <script>
 
     $(document).ready(function(){
@@ -150,7 +151,7 @@ $(document).ready( function () {
             { extend: 'print', text: 'Imprimir', className: 'btn-sm' }
         ],
         "ajax": {
-            url: "{{route('adm.list.roles')}}",
+            url: "{{ route('roles.index') }}",
             type: 'POST',
             data:{ _token: '{{ csrf_token() }}'},
         },
@@ -187,4 +188,5 @@ $(document).ready( function () {
 
   });
 </script>
+
 @endpush

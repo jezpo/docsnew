@@ -6,7 +6,7 @@
 @section('content')
  <!-- begin breadcrumb -->
  <ol class="breadcrumb float-xl-right">
-    <li class="breadcrumb-item"><a href="{{ url('/home') }}">Principal</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Principal</a></li>
     <li class="breadcrumb-item"><a href="{{ route('permissions.index') }}">Permisos</a></li>
     <li class="breadcrumb-item active">Nuevo permiso</li>
 </ol>
@@ -41,7 +41,7 @@
                             </label>
                             <div class="col-12">
                                 <div class="input-group ">
-                                    <input type="text" id="name" name="name" class="form-control" value="{{ $data['name'] }}" placeholder="Nombre del Permisos">
+                                    <input type="text" id="name" name="name" class="form-control" value="{{--{{ $data['name'] }}--}}" placeholder="Nombre del Permisos">
                                     <div class="input-group-addon">
                                         <i class="fa fa-address-card"></i>
                                     </div>
@@ -61,7 +61,7 @@
                             </label>
                             <div class="col-12">
                                 <div class="input-group ">
-                                    <input type="text" id="slug" name="slug" class="form-control" value="{{ $data['slug'] }}" onkeypress="return numbersAndLettersOnly()" placeholder="Slug del Permiso">
+                                    <input type="text" id="slug" name="slug" class="form-control" value="{{--{{ $data['slug'] }}--}}" onkeypress="return numbersAndLettersOnly()" placeholder="Slug del Permiso">
                                     <div class="input-group-addon">
                                         <i class="fab fa-sellcast"></i>
                                     </div>
@@ -81,7 +81,7 @@
                             </label>
                             <div class="col-12">
                                 <div class="input-group ">
-                                    <textarea id="description" name="description" class="form-control" placeholder="Descripción del permiso">{{ $data['description'] }}</textarea>
+                                    <textarea id="description" name="description" class="form-control" placeholder="Descripción del permiso">{{--{{ $data['description'] }}--}}</textarea>
                                     <div class="input-group-addon">
                                         <i class="fa fa-list-alt"></i>
                                     </div>
@@ -104,12 +104,13 @@
                         <div class="col-12">
                             <select name="model" id="model" class="select2 form-control" >
                                 <option value="">Seleccionar Permiso Model</option>
-
+                                {{--}}
                                 @foreach ($data['permissionModels'] as $permissionModel)
                                     <option @if ($permissionModel == $data['model']) selected @endif value="{{ $permissionModel }}">
                                         {{ $permissionModel }}
                                     </option>
                                 @endforeach
+                                --}}
                             </select>
                         </div>
                         @if ($errors->has('model'))

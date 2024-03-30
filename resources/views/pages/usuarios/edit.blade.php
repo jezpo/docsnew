@@ -24,7 +24,7 @@
 @section('content')
  <!-- begin breadcrumb -->
  <ol class="breadcrumb float-xl-right">
-    <li class="breadcrumb-item"><a href="{{ url('/home') }}">Principal</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Principal</a></li>
     <li class="breadcrumb-item"><a href="{{ url('/users') }}">Usuarios</a></li>
     <li class="breadcrumb-item active">Editar Usuario</li>
 </ol>
@@ -48,10 +48,10 @@
     <!-- begin panel-body -->
     <div class="panel-body">
         @include('mensajes.flash-messages')
-        <form action="{{ route('users.update', $user->id) }}" method="POST" accept-charset="utf-8" >
-            {{ method_field('PUT') }}
+        <form action="" method="POST" accept-charset="utf-8" >
+         
             <div class="card-body">
-                {{ csrf_field() }}
+               
                 <div class="row">
                     <div class="col-md-8 offset-xl-2">
                         <div class="form-group has-feedback row {{ $errors->has('ci') ? ' has-error ' : '' }}">
@@ -180,6 +180,7 @@
                             </label>
                             <div class="col-9">
                                 <select class="multiple-select2 form-control" name="role[]" id="role" multiple="multiple" aria-placeholder="Seleccione Rol de Usuario">
+                                    {{--}}
                                     @if ($roles)
                                         @foreach($roles as $role)
                                             @php
@@ -195,6 +196,7 @@
                                             <option value="{{ $role->id }}" {{ $ban == 1 ? 'selected="selected"' : '' }}>{{ $role->name }}</option>
                                         @endforeach
                                     @endif
+                                    --}}
                                 </select>
                             </div>
                             @if ($errors->has('role'))

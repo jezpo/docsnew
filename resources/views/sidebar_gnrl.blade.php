@@ -1,6 +1,6 @@
 
 <li class="has-sub @yield('Users')">
-    <a href="">
+    <a href="{{ route('users.create') }}">
 	<i class="material-icons  ">groups</i>
         <span>
            Usuarios
@@ -9,8 +9,8 @@
 </li>
 
 <li class="has-sub @yield('Roles')">
-    <a href="">
-	<i class="material-icons  ">group</i>
+    <a href="{{ route('roles.index') }}"> <!-- Enlace a la lista de roles -->
+        <i class="material-icons">group</i>
         <span>
             Roles
         </span>
@@ -18,7 +18,7 @@
 </li>
 
 <li class="has-sub @yield('Permisos')">
-    <a href="">
+    <a href="{{ route('permissions.index') }}">
 	<i class="material-icons  ">admin_panel_settings</i>
         <span>
             Permisos

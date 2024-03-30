@@ -1,6 +1,6 @@
 
 @extends('layouts.default')
-@section('title1','uatf')
+@section('title1','UATF')
 @section('mSidebar')
  @include('includes.sidebar')
 @endsection

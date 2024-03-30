@@ -22,7 +22,7 @@
 </style>
  <!-- begin breadcrumb -->
  <ol class="breadcrumb float-xl-right">
-    <li class="breadcrumb-item"><a href="{{ url('/home') }}">Principal</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Principal</a></li>
     <li class="breadcrumb-item active">Permisos</li>
 </ol>
 <!-- end breadcrumb -->
@@ -161,7 +161,7 @@
                 { extend: 'print', text: 'Imprimir', className: 'btn-sm' }
             ],
             "ajax": {
-                url: "{{route('adm.list.permissions')}}",
+                url: '  '",
                 type: 'POST',
                 data:{ _token: '{{ csrf_token() }}'},
             },

@@ -6,7 +6,7 @@
 @section('content')
  <!-- begin breadcrumb -->
  <ol class="breadcrumb float-xl-right">
-    <li class="breadcrumb-item"><a href="{{ url('/home') }}">Principal</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Principal</a></li>
     <li class="breadcrumb-item"><a href="{{ route('permissions.index') }}">Permisos</a></li>
     <li class="breadcrumb-item active">Editar Permiso</li>
 </ol>
