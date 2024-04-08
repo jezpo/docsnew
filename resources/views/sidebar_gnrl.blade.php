@@ -1,6 +1,6 @@
 
 <li class="has-sub @yield('Users')">
-    <a href="{{ route('users.create') }}">
+    <a href="{{ route('users.index') }}">
 	<i class="material-icons  ">groups</i>
         <span>
            Usuarios

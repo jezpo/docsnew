@@ -161,8 +161,8 @@
                 { extend: 'print', text: 'Imprimir', className: 'btn-sm' }
             ],
             "ajax": {
-                url: '  '",
-                type: 'POST',
+                url: '{{ route('permissions.index') }}',
+                type: 'GET',
                 data:{ _token: '{{ csrf_token() }}'},
             },
             columns: [

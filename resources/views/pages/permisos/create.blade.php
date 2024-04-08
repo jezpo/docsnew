@@ -41,7 +41,7 @@
                             </label>
                             <div class="col-12">
                                 <div class="input-group ">
-                                    <input type="text" id="name" name="name" class="form-control" value="{{--{{ $data['name'] }}--}}" placeholder="Nombre del Permisos">
+                                    <input type="text" id="name" name="name" class="form-control" value="{{ $data['name'] }}" placeholder="Nombre del Permisos">
                                     <div class="input-group-addon">
                                         <i class="fa fa-address-card"></i>
                                     </div>
@@ -55,13 +55,13 @@
                                 </div>
                             @endif
                         </div>
-                        <div class="form-group has-feedback row {{ $errors->has('slug') ? ' has-error ' : '' }}">
+                        {{--<div class="form-group has-feedback row {{ $errors->has('slug') ? ' has-error ' : '' }}">
                             <label for="slug" class="col-12 control-label">
                                 Slug del Permiso
                             </label>
                             <div class="col-12">
                                 <div class="input-group ">
-                                    <input type="text" id="slug" name="slug" class="form-control" value="{{--{{ $data['slug'] }}--}}" onkeypress="return numbersAndLettersOnly()" placeholder="Slug del Permiso">
+                                    <input type="text" id="slug" name="slug" class="form-control" value="{{--{{ $data['slug'] }}" onkeypress="return numbersAndLettersOnly()" placeholder="Slug del Permiso">
                                     <div class="input-group-addon">
                                         <i class="fab fa-sellcast"></i>
                                     </div>
@@ -74,7 +74,7 @@
                                     </span>
                                 </div>
                             @endif
-                        </div>
+                        </div>--}}
                         <div class="form-group has-feedback row {{ $errors->has('description') ? ' has-error ' : '' }}">
                             <label for="description" class="col-12 control-label">
                                 Descripción del Permiso
